@@ -1,0 +1,25 @@
+body {
+}
+
+#left {
+	background-color: gray;
+
+	float: left;
+	left: 0;
+}
+
+#right {
+	background-color: gray;
+
+	float: right;
+	right: 0;
+}
+
+article {
+	height: 100%;
+	top: 0;
+}
+
+
+h1 {
+}
