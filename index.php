@@ -1,1 +1,3 @@
-<?php header( 'Location: /index.html' ) ;  ?>
+<?php
+echo "This is Working";
+?>
