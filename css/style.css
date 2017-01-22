@@ -4,41 +4,12 @@ body {
 	color: #262625
 }
 
-#left {
-	background-color: #8D8D8D;
-	position: fixed;
-	float: left;
-	left: 0;
-	box-shadow:  0 20px 20px black;
-}
-
-#right {
-	background-color: #8D8D8D;
-	position: fixed;
-	float: right;
-	right: 0;
-	box-shadow:  0 20px 20px black;
-}
-
-#signin {
-	width: 85%;
-	height: 10em;
-	background-color: #E6E3DC;
-}
-
-#ULbottom {
-	position: fixed;
-	bottom: 0;
-	width: 15em;
-}
-
 article {
 	height: 100%;
 	top: 0;
 	width: 20%;
 	box-shadow: 0 2px 5px black; 
 }
-
 
 h1 {
 	text-align: center;
@@ -91,3 +62,56 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+table {
+    width:100%;
+	background-color: #D4DEDC;
+	font-size: 1.5em;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+/* ID */
+
+#left {
+	background-color: #8D8D8D;
+	position: fixed;
+	float: left;
+	left: 0;
+	box-shadow:  0 20px 20px black;
+}
+
+#right {
+	background-color: #8D8D8D;
+	position: fixed;
+	float: right;
+	right: 0;
+	box-shadow:  0 20px 20px black;
+}
+
+#signin {
+	width: 85%;
+	height: 10em;
+	background-color: #E6E3DC;
+}
+
+#ULbottom {
+	position: fixed;
+	bottom: 0;
+	width: 15em;
+}
+
+#tableTitle {
+	background-color: #A6479F;
+	text-align: center;
+}
+
+/* CLASSES */
