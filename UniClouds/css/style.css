@@ -1,0 +1,117 @@
+body {
+	background-color: #715696;
+	font-family: 'Raspoutine Medium', Helvetica;
+	color: #262625
+}
+
+article {
+	height: 100%;
+	top: 0;
+	width: 20%;
+	box-shadow: 0 2px 5px black; 
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+h2 {
+	text-align: center;
+	font-size: 2em;
+}
+
+
+ul {
+    list-style-type: none;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+} 
+
+li a {
+    display: block; 
+    color: #000;
+    padding: 0.5em 1em;
+    text-decoration: none;
+	font-size: 1.5em;
+	width: 75%;
+	background-color: #E6E3DC;
+	margin-top: 1em;
+	box-shadow: 0 2px 5px black; 
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+li a:active { 
+    background-color: black;
+}
+
+ul {
+	margin-top: 5%
+}
+
+img {
+	text-align:center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width:100%;
+	background-color: #D4DEDC;
+	font-size: 1em;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+/* ID */
+
+#left {
+	background-color: #8D8D8D;
+	position: fixed;
+	float: left;
+	left: 0;
+	box-shadow:  0 20px 20px black;
+}
+
+#right {
+	background-color: #8D8D8D;
+	position: fixed;
+	float: right;
+	right: 0;
+	box-shadow:  0 20px 20px black;
+}
+
+#signin {
+	width: 85%;
+	height: 10em;
+	background-color: #E6E3DC;
+}
+
+#ULbottom {
+	position: fixed;
+	bottom: 0;
+	width: 15%;
+}
+
+#tableTitle {
+	background-color: #A6479F;
+	text-align: center;
+}
+
+/* CLASSES */
