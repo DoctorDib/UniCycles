@@ -33,7 +33,7 @@ ul {
 li a {
     display: block; 
     color: #000;
-    padding: 8px 16px;
+    padding: 0.5em 1em;
     text-decoration: none;
 	font-size: 1.5em;
 	width: 75%;
@@ -63,13 +63,13 @@ img {
     margin-right: auto;
 }
 
-table {
+.tableTitle {
     width:100%;
 	background-color: #D4DEDC;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
-table, th, td {
+.tableTitle, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
