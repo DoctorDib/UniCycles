@@ -1,11 +1,11 @@
 <?php
 function isLoggedIn(){
     $correct = 'map.php';
-    $alternative = 'map.php';
+    $alternative = 'logIn.php';
     if ($_SESSION['loggedIn'] != true) {
-       header('location .'.$correct);
+       header('location:'.$correct);
     } else {
-        header('location: '.$alternative);
+        header('location:'.$alternative);
     }
     }
 ?>
