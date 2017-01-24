@@ -13,7 +13,7 @@ article {
 
 h1 {
 	text-align: center;
-	font-size: 2.5em;
+	font-size: 1.2em;
 }
 
 h2 {
@@ -63,13 +63,13 @@ img {
     margin-right: auto;
 }
 
-.tableTitle {
+tableTitle {
     width:100%;
 	background-color: #D4DEDC;
 	font-size: 1em;
 }
 
-.tableTitle, th, td {
+tableTitle, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -77,6 +77,7 @@ img {
 th, td {
     padding: 5px;
     text-align: left;
+	background-color: #D4DEDC;
 }
 
 /* ID */
@@ -99,7 +100,7 @@ th, td {
 
 #signin {
 	width: 85%;
-	height: 10em;
+	height: 15em;
 	background-color: #E6E3DC;
 }
 
@@ -109,9 +110,10 @@ th, td {
 	width: 15%;
 }
 
-#tableTitle {
+/* CLASSES */
+
+.tableTitle {
 	background-color: #A6479F;
 	text-align: center;
+	font-size: 1.3em;
 }
-
-/* CLASSES */

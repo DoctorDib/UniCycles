@@ -11,7 +11,7 @@ function connectDatabase()
     $servername = "unicycles.ddns.net:157";
     $username = "root";
     $password = "unicycles";
-    $databaseName = "localhost";
+    $databaseName = "test";
     $datain = $_POST["data"];
 
 // Create database Connection
@@ -22,11 +22,4 @@ function connectDatabase()
     }
 }
 
-/**
- * @param $location
- */
-function freeSpaces($location){
-    connectDatabase();
-    $sql = "SELECT id, firstname, lastname FROM MyGuests";
-}
 ?>
