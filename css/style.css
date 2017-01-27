@@ -1,0 +1,314 @@
+body {
+	background-color: #715696;
+	font-family: 'Raspoutine Medium', Helvetica;
+	color: #262625
+}
+
+article {
+	height: 100%;
+	top: 0;
+	box-shadow: 0 2px 5px black; 
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+h2 {
+	text-align: center;
+	font-size: 2em;
+}
+
+
+ul {
+    list-style-type: none;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	margin-bottom: 1em;
+
+	padding:1px;
+	margin: 5px;
+	
+	height: 75%;
+} 
+
+li a {
+    display: block; 
+    color: #000;
+    padding: 0.5em 1em;
+    text-decoration: none;
+	font-size: 1em;
+	background-color: #E6E3DC;
+	margin-top: 1em;
+	box-shadow: 0 2px 5px black; 
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+li a:active { 
+    background-color: black;
+}
+
+img {
+	text-align:center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tableTitle {
+    width:100%;
+	background-color: #D4DEDC;
+	font-size: 1em;
+}
+
+tableTitle, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+	background-color: #D4DEDC;
+}
+
+/* ID */
+
+#left {
+	background-color: #8D8D8D;
+	position: fixed;
+	float: left;
+	left: 0;
+	box-shadow:  0 20px 20px black;
+	position: fixed;
+	overflow-x: hidden;
+
+	height: 100%;
+	width: 15%;
+	font-size: 1.2em;
+}
+
+#right {
+	position: fixed;
+	overflow-y: auto;
+	right: 0;
+	background-color: #8D8D8D;
+	float: right;
+	box-shadow:  0 20px 20px black;
+}
+
+#signin {
+
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 150px;
+	max-height: 150px;
+
+	width: 85%;
+	height: 15em;
+
+	background-color: #E6E3DC;
+}
+
+#profilePic {
+	width: 80%;
+	height: 80%;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: red;
+}
+
+/* CLASSES */
+
+.tableTitle {
+	background-color: #A6479F;
+	text-align: center;
+	font-size: 1.3em;
+
+}
+
+.Icon {
+	display: none;
+}
+
+.closeMenuToggle {
+	display: none;
+}
+
+.closeSpace {
+	display: none;
+}
+
+.openSpace{
+	display: none;
+}
+
+
+@media screen and (max-width: 500px) {	
+	
+	#signin {
+		display: none;
+		width: 100%
+	}
+	
+
+
+
+
+
+/* HAMBURGER MENU OPTIONS*/
+	
+	ul{
+		line-height: 2em;
+		margin: 0;
+		padding: 1px;
+		font-size: 0.75em;
+		margin: 5px;
+	}
+	
+	.Icon {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.8em;
+		height: 45px;
+		width: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	
+	
+	
+
+	.openMenuToggle{
+		display: flex;
+		position: fixed;
+		height: 50px;
+		width: 50%;
+		background-color: #515453;
+		top: 0;
+		align-items: center;
+		justify-content: center;
+		padding-left: 10%;
+		color: white;
+		font-size: 2em;
+		left:0;
+	}
+	
+	.closeMenuToggle{
+		display:none;
+		height: 50px;
+		width: 100%;
+		background-color: #515453;
+		margin-bottom: 1em;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 3em;
+	}
+	
+	
+	.openSpace{
+		position: fixed;
+		background-color: #515453;
+		display: flex;
+		top: 0;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 1.5em;
+		right: 0;
+		height: 50px;
+		width: 50%;
+		position: fixed;
+	}
+	
+	.closeSpace{
+		display: block;
+		background-color: #515453;
+	
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 3em;
+	}
+	
+	
+	.menu{
+		background-color: grey;
+		width: 40px;
+		position: fixed;
+	}
+	
+	.secondMenu {
+		background-color: grey;
+		width: 0px;
+	}
+	
+	.menu li a{
+		padding: 2px;
+		padding-right: 3px;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+	
+	.Button {
+		display: none;
+		font-size: 1.5em;
+		padding: 1em;
+	}
+	
+	td {
+		font-size: 1em;
+	}
+	
+	img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 75%;
+		margin-left: 20%;
+		margin-top: 10em;
+	}
+	
+}
+
+
+@media screen and (max-width: 350px) {
+	.Icon {
+		width: 30px;
+		height: 30px;
+		font-size: 1em;
+	}
+	
+	.openMenuToggle{
+		height: 40px;
+		font-size: 1em;
+	}
+	
+	.openSpace{
+		height: 40px;
+		font-size: 1em;
+	}
+	
+	.Button {
+		font-size: 1em;
+	}
+	
+	#profilePic {
+		margin-bottom: 2em;
+	}
+}
