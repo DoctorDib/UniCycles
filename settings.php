@@ -1,4 +1,6 @@
 <?php
 session_start();
-echo "rip";
+username('dave');
+echo $_SESSION[username];
+echo "STEVEN";
 ?>
