@@ -1,9 +1,11 @@
 body {
-	background-color: #715696;
+	
 	font-family: 'Raspoutine Medium', Helvetica;
 	color: #262625;
 	
-	background-repeat: no-repeat;
+	background-image: url("/pics/Background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 article {

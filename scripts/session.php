@@ -1,8 +1,8 @@
 <?php
 session_start();
-function loginRedirection($correct,$inCorrect){
+function loginRedirection($correct){
     if ($_SESSION['loggedIn'] != true) {
-        header('location:' . $inCorrect);
+        return;
     } else {
         header('location:'.$correct);
     }
@@ -10,11 +10,19 @@ function loginRedirection($correct,$inCorrect){
 
     function username(){
         if ($_SESSION['loggedIn'] == true){
-            $_SESSION['Username'] = "Display loged in name";
-            echo $_SESSION['Username'];
+            return;
     }
     else{
         echo $_SESSION['Username'] = "Not Logged In";
+        return;
     }
 }
+    function popUp($param){
+        ?>
+        <script type="text/javascript">
+            alert("Input Error.   <?php echo $param; ?>");
+                history.back();
+            </script>
+        <?php
+    }
 ?>

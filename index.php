@@ -6,8 +6,7 @@
 	include '\scripts\session.php';
 	include '\scripts\connect.php';
 	username();
-	//isLoggedIn();
-    $_SESSION['loggedIn'] = true;
+    //isLoggedIn();
 	$connection = Connect();
 ?>
 <html>
@@ -40,11 +39,9 @@
 				</article>
 				<li><a href="login.php" class="Button signIn"> <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> </i> Sign In </a></li>
 				<li><a href="login.php" class="Icon"> <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> </i></a></li>
-				
-				
 				<li><a href="#" class="Button homePage"> <i class="fa fa-home fa-lg" aria-hidden="true"></i> Home </a></li>
-				<li><a href="#" class="Icon homePage" > <i class="fa fa-home fa-lg" aria-hidden="true"></i> </a></li>
-				<li><a href="#" class="Button reservePage"> <i class="fa fa-bicycle fa-lg"></i> Reserve bike </a></li>
+                <li><a href="#" class="Icon homePage" > <i class="fa fa-home fa-lg" aria-hidden="true"></i> </a></li>
+                <li><a href="#" class="Button reservePage"> <i class="fa fa-bicycle fa-lg"></i> Reserve bike </a></li>
 				<li><a href="#" class="Icon reservePage"> <i class="fa fa-bicycle fa-lg"></i></a></li>
 				<li><a href="#" class="Button aboutPage"> <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> About Us </a></li>
 				<li><a href="#" class="Icon aboutPage"> <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></a></li>
@@ -54,19 +51,13 @@
 				<li><a href="#" class="Icon reportPage"> <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i></a></li>
 				<li><a href="#" class="Button settingPage"> <i class="fa fa-cogs fa-lg" aria-hidden="true"></i> </i> Settings </a></li>
 				<li><a href="#" class="Icon settingPage"> <i class="fa fa-cogs fa-lg" aria-hidden="true"></i> </i></a></li>
-
-				<li><a href="#" class="Button signOut"> <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> </i> Sign Out </a></li>
+                <li><a href="#" class="Button signOut"> <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> </i> Sign Out </a></li>
 				<li><a href="#" class="Icon"> <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> </i></a></li>
-
 			</ul>
 		</article>
-
 		<article id="main">
 			<div id="content"></div>
 		</article>
-		</td>
-		
-		<td>
 		<article id="right" class="secondMenu">
 			<div class="closeSpace">&#8592</div>
 			<table style="width:100%">
@@ -232,12 +223,9 @@
 					</td>
 				</tr>
 			</table>
-            <button class="button" onClick="window.location.reload()">
-
 
         </article>
 
-		
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 		<script src="js/main.js"></script>
@@ -251,13 +239,7 @@
 			else {
 				$(".signOut").show();
 				$(".signIn").hide();
-				
 			}
-
 		</script>
-		
-		
-		
-	
 	</body>
 </html>
