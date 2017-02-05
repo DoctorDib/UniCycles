@@ -1,1 +1,0 @@
-"<script>alert('Please select category of the question entered.')</script>"
