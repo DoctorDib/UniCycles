@@ -18,11 +18,19 @@ function loginRedirection($correct){
     }
 }
     function popUp($param){
-        ?>
-        <script type="text/javascript">
-            alert("Input Error.   <?php echo $param; ?>");
-                history.back();
-            </script>
-        <?php
-    }
+    ?>
+    <script type="text/javascript">
+        alert("Input Error.   <?php echo $param; ?>");
+        history.back();
+    </script>
+    <?php
+}
+function popUpCorrect($param){
+    ?>
+    <script type="text/javascript">
+        alert(<?php echo $param; ?>");
+        history.back();
+    </script>
+    <?php
+}
 ?>

@@ -1,16 +1,11 @@
 <?php
-$servername = 	"";
-$username	=	"";
-$password	=	"";
-$databaseName	=	"localhost";
-$datain = $_POST["data"];
+include "../connect.php";
+
 
 // Create database Connection
-$Connection = new mysqli($servername,$username,$password,$databaseName);
+$Connection = connect();
 // Check Connection
-if($Connection->connect_error){
-	die("Connection Failed:". $connection -> connect_error);
-	}
+
 $timeLimitQuery = "SELECT User_ID FROM Request WHERE (Time_of_Finish - Time_of_Depature < 00:05:00 && returned != True)";
 $timeLimitResult = $connection-> query($timeLimitQuery);
 
@@ -23,5 +18,13 @@ if($timeLimitResult->num_rows>0){
 		
 	}
 
-$connection -> close();
+function sendMail($to,$subject,$message){
+    $headers = 'From: uniCyclesPortsmouth.gmail.com' . "\r\n" .
+        'Reply-To: uniCyclesPortsmouth.gmail.com\'' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+}
 ?>
+<script>
+    header("Refresh: 300;url='unicycles.ddns.net'");
