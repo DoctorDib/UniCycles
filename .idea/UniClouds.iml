@@ -17,11 +17,9 @@
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
-          <root url="file://A:/Uni Work/INSE/UniClouds/.idea" />
           <root url="file://$APPLICATION_HOME_DIR$/jre/jre/bin" />
         </CLASSES>
         <SOURCES>
-          <root url="file://A:/Uni Work/INSE/UniClouds/.idea" />
           <root url="file://$APPLICATION_HOME_DIR$/jre/jre/bin" />
         </SOURCES>
       </library>

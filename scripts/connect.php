@@ -23,6 +23,6 @@ function query($mysql_qry, $fieldName,$connection){
             return $row[$fieldName];
         }
     }
-    return "not working";
+    return "No Current Hire";
 }
 ?>

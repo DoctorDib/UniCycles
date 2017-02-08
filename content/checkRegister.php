@@ -74,32 +74,113 @@ if($passwordCheckbinary == $passwordBinary) {
         echo $passwordHash;
     }
 }else{
-    echo "nvdks";
     popUp("Passwords do not match");
 }
 
 // Check if user is already in the database
 if($universityRole == "Student"){
     StudentAlreadyUser($UPnumber,$conn);
+    $email = $UPnumber."@myport.ac.uk";
 }
 else{
     //popUp("You have added");
 }
 if($universityRole == "Other"){
     lectureAlreadyUser($phoneNumber,$conn);
-}
-else{
-    //query("INSER INTO USER (User_ID,Forename,Surname,DoB,Email_Address,Phone,Is_Student,Is_Lecturer,Is_Other_Staff,UP_Number) VALUES(User_ID,'$forename','$surname','$dateOfBirth','$email','$phoneNumber',FALSE,TRUE,FALSE,$UPnumber);");
-    //popUpCorrect("You been succesfully added");
-}
-if($universityRole == "Other"){
+    $email = $forename.".".$surname."@port.ac.uk";
+}else if($universityRole == "Other"){
     lectureAlreadyUser($phoneNumber,$conn);
-}
-else{
-    //query("INSER INTO USER (User_ID,Forename,Surname,DoB,Email_Address,Phone,Is_Student,Is_Lecturer,Is_Other_Staff,UP_Number) VALUES(User_ID,'$forename','$surname','$dateOfBirth','$email','$phoneNumber',FALSE,TRUE,FALSE,$UPnumber);");
-    //popUpCorrect("You been succesfully added");
+    $email = $forename.".".$surname."@port.ac.uk";
 }
 
+$password = hash('sha512', $password);
+ if($universityRole == 'Student'){
+     $mysql_qry = "INSERT INTO `unicycle`.`user`
+	(`User_ID`,
+	`Forename`,
+	`Surname`,
+	`DoB`,
+	`Email_Address`,
+	`Phone`,
+	`Is_Student`,
+	`Is_Lecturer`,
+	`Is_Other_Staff`,
+	`UP_Number`,
+	`password`
+	)
+	VALUES
+	('User_ID',
+	'$forename',
+	'$surname',
+	'$dateOfBirth',
+	'$email',
+	'$phoneNumber',
+	TRUE,
+	FALSE,
+	FALSE,
+	'$UPnumber',
+	'$password'
+	);";
+     $result = mysqli_query($conn ,$mysql_qry);
+}
+else if($universityRole == "Lecturer"){
+    $mysql_qry = "INSERT INTO `unicycle`.`user`
+	(`User_ID`,
+	`Forename`,
+	`Surname`,
+	`DoB`,
+	`Email_Address`,
+	`Phone`,
+	`Is_Student`,
+	`Is_Lecturer`,
+	`Is_Other_Staff`,
+	`UP_Number`,
+	`password`
+	)
+	VALUES
+	('User_ID',
+	'$forename',
+	'$surname',
+	'$dateOfBirth',
+	'$email',
+	'$phoneNumber',
+	FALSE,
+	TRUE,
+	FALSE,
+	'$UPnumber',
+	'$password'
+	);";
+    $result = mysqli_query($conn ,$mysql_qry);
+}
+else if($universityRole == "Other"){
+    $mysql_qry = "INSERT INTO `unicycle`.`user`
+	(`User_ID`,
+	`Forename`,
+	`Surname`,
+	`DoB`,
+	`Email_Address`,
+	`Phone`,
+	`Is_Student`,
+	`Is_Lecturer`,
+	`Is_Other_Staff`,
+	`UP_Number`,
+	`password`
+	)
+	VALUES
+	('User_ID',
+	'$forename',
+	'$surname',
+	'$dateOfBirth',
+	'$email',
+	'$phoneNumber',
+	FALSE,
+	FALSE,
+	TRUE,
+	'$UPnumber',
+	'$password'
+	);";
+    $result = mysqli_query($conn ,$mysql_qry);
+    }
 
 function dateOfBirthCheck($day,$month,$year)
 {
@@ -107,11 +188,11 @@ function dateOfBirthCheck($day,$month,$year)
         if (is_numeric($day) && is_numeric($month) && is_numeric($year)) {
             if ($year > 1900 && $year < 2001) {
                 if ($month == 1 || $month == 3 || $month == 5 || $month == 7 || $month == 9 || $month == 11 && days <= 30) {
-                    return "$year/$month/$day";
+                    return "$year-$month-$day";
                 } else if ($month == 4 || $month == 6 || $month == 8 || $month == 10 || $month == 12 || $month == 1 && days <= 31) {
-                    return "$year/$month/$day";
+                    return "$year-$month-$day";
                 } else if ($month == 2 && $day <= 28 || $month == 2 && $year % 4 == 0 && $day <=29) {
-                    return "$year/$month/$day";
+                    return "$year-$month-$day";
                 }
             } else {
                 return popUp("You need to be at least 16 to use this service");
