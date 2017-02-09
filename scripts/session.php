@@ -33,13 +33,4 @@ function popUpCorrect($param){
     </script>
     <?php
 }
-
-function popUpReturnBike($param){
-    ?>
-    <script type="text/javascript">
-        alert(<?php echo $param; ?>");
-        history.back();
-    </script>
-    <?php
-}
 ?>
