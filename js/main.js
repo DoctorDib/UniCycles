@@ -28,8 +28,7 @@ $('.openMenuToggle').click(function() {
 $('.openSpace').click(function() {
 	$(".secondMenu").animate({width:'75%'},350);
 	
-	
-	
+
 	$(".menu").animate({width:'15%'},350);
 	$( "#signin" ).hide();
 	
@@ -61,7 +60,7 @@ $(document).ready(function() {
 
     $(".reservePage").click(function() {
         $.ajax({
-            url : "content/reserve.html",
+            url : "content/hireABikeInput.php",
             dataType: "text",
             success : function (data) {
                 $("#content").html(data);
@@ -90,24 +89,41 @@ $(document).ready(function() {
     });
 	
 	$(".reportPage").click(function() {
-        $.ajax({
-            url : "content/report.html",
+		$.ajax({
+			type: "POST",
+            url : "content/report.php",
             dataType: "text",
             success : function (data) {
 				$("#content").html(data);
             }
         });
+
     });
 	
 	$(".settingPage").click(function() {
-        $.ajax({
-            url : "content/setting.html",
+		$.ajax({
+			type: "POST",
+            url : "content/setting.php",
             dataType: "text",
             success : function (data) {
 				$("#content").html(data);
             }
         });
+
     });
+	
+	$(".hirePage").click(function() {
+		$.ajax({
+											type: "POST",
+            	url : "content/currentHire.php",
+            	dataType: "text",
+            	success : function (data) {
+				$("#content").html(data);
+            }
+        });
+
+    });
+	
 }); 
 	
 

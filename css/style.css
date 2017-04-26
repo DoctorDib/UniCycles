@@ -6,6 +6,8 @@ body {
 	background-image: url("/pics/Background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+	
+	overflow-y: hidden;
 }
 
 article {
@@ -93,7 +95,21 @@ th, td {
 	background-color: #D4DEDC;
 }
 
+fieldset {
+	padding: 10px;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.5);
+	margin-top: 10%;
+	color: white;
+}
+
 /* ID */
+
+#settings {
+	width: 10%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #left {
 	background-color: #8D8D8D;
@@ -102,10 +118,11 @@ th, td {
 	left: 0;
 	box-shadow:  0 20px 20px black;
 	position: fixed;
-
+	z-index: 10;
 	height: 100%;
 	width: 15%;
 	font-size: 1.2em;
+	overflow-y: scroll;
 }
 
 #main {
@@ -116,6 +133,7 @@ th, td {
     float: left;
     width: 65%;
 	text-align: center;
+	z-index: 2;
 }
 
 #right {
@@ -126,10 +144,10 @@ th, td {
 	float: right;
 	box-shadow:  0 20px 20px black;
 	width: 20%;
+	z-index: 9;
 }
 
 #signin {
-
 	margin-left: auto;
 	margin-right: auto;
 	width: 12vw;
@@ -147,6 +165,33 @@ th, td {
 	background-color: red;
 }
 
+#email {
+	background-color: black;
+}
+
+input {
+	font-size: 1em;
+	color: black;
+    height: 1em;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	padding: 1em;
+}
+
+
+input[type=submit]{
+
+	height: 1em;
+	
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	padding: 1.5em;
+	margin-top: 10px;
+}
 
 /* CLASSES */
 
@@ -173,11 +218,13 @@ th, td {
 	display: none;
 	position: fixed;
 	top: 0px;
+	z-index: 8;
 }
 
 .openMenutoggle {
 	top: 0px;
 	position: fixed;
+	z-index: 8;
 }
 
 .signIn {
@@ -232,8 +279,13 @@ th, td {
 }
 
 
-@media screen and (max-width: 500px) {	
-	
+@media screen and (max-width: 600px) {	
+	fieldset {
+		margin-top: 0;
+		padding: 10px;
+		max-height: 100%;
+		overflow-y: scroll;
+	}
 	#signin {
 		display: none;
 		width: 100%;
@@ -248,6 +300,10 @@ th, td {
 
 	#right {
 		width: 0;
+	}
+	
+	#settings {
+		margin-left: 10px;
 	}
 
 /* HAMBURGER MENU OPTIONS*/

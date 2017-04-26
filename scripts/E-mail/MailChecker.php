@@ -1,3 +1,8 @@
+<html>
+<header>
+
+</header>
+</html>
 <?php
 include "../connect.php";
 
@@ -5,19 +10,10 @@ include "../connect.php";
 // Create database Connection
 $Connection = connect();
 // Check Connection
+sendMail('up766290@myport.ac.uk',"YOU ARE AMAZING AT PHP","OMG YOUR PHP IS SO GOOD");
 
-$timeLimitQuery = "SELECT User_ID FROM Request WHERE (Time_of_Finish - Time_of_Depature < 00:05:00 && returned != True)";
-$timeLimitResult = $connection-> query($timeLimitQuery);
-
-if($timeLimitResult->num_rows>0){
-	//do something witht he database
-	while($row = $timeLimitResult->fetch_assoc()){
-		$emailData = "SELECT ";
-	}
-	} else {
-		
-	}
-
+// Function - inputs email address, subject of email and message in email
+// Sends an email to the email address given from uniCyclesPortsmouth.gmail.com containting the message
 function sendMail($to,$subject,$message){
     $headers = 'From: uniCyclesPortsmouth.gmail.com' . "\r\n" .
         'Reply-To: uniCyclesPortsmouth.gmail.com\'' . "\r\n" .
@@ -26,5 +22,4 @@ function sendMail($to,$subject,$message){
     mail($to, $subject, $message, $headers);
 }
 ?>
-<script>
-    header("Refresh: 300;url='unicycles.ddns.net'");
+
