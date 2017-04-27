@@ -1,2 +1,1 @@
-<?php
-echo "not logged in please log in to use this functionality";
+<p> TESTING </p>

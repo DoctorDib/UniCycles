@@ -193,7 +193,7 @@ if($_Session['hasPassed']) {
     }
     ?>
     <script type="text/javascript">
-        alert("<?php echo "Report has been submitted"; ?>");
+        alert("<?php echo "Account has been created"; ?>");
                     window.location = "../content/login.php";
                 </script>
 <?php

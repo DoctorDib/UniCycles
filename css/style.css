@@ -98,15 +98,14 @@ th, td {
 fieldset {
 	padding: 10px;
 	z-index: 1;
-	background: rgba(0, 0, 0, 0.5);
-	margin-top: 10%;
+	background: rgba(0, 0, 0, 0.65);
 	color: white;
 }
 
 /* ID */
 
 #settings {
-	width: 10%;
+	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -172,25 +171,37 @@ fieldset {
 input {
 	font-size: 1em;
 	color: black;
-    height: 1em;
+    height: 0.75em;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
 	padding: 1em;
+	border: 0.05em solid black;
+}
+
+#notLogged {
+	background-color: black;
+	color: white;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 0.5em;
+	font-size: 2em;
+	border-radius: 0.5em;
 }
 
 
 input[type=submit]{
 
-	height: 1em;
+	height: 0.75em;
 	
 	background: #fff;
-	border: 1px solid #fff;
 	cursor: pointer;
 	border-radius: 2px;
-	color: #a18d6c;
 	font-family: 'Exo', sans-serif;
 	padding: 1.5em;
-	margin-top: 10px;
+	border: 0.075em solid black;
 }
 
 /* CLASSES */
@@ -281,6 +292,7 @@ input[type=submit]{
 
 @media screen and (max-width: 600px) {	
 	fieldset {
+		background: rgba(0, 0, 0, 0);
 		margin-top: 0;
 		padding: 10px;
 		max-height: 100%;
@@ -304,6 +316,10 @@ input[type=submit]{
 	
 	#settings {
 		margin-left: 10px;
+	}
+	
+	#notLoggedIn {
+		font-size: 0.5em;
 	}
 
 /* HAMBURGER MENU OPTIONS*/

@@ -8,17 +8,14 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 $password = $_POST['password'];
 $confirmPass = $_POST['passwordConfirm'];
-echo "done1";
+
 if($password == ""  || $confirmPass == ""){
     popUp("Passwords are empty");
 }
-echo "done2";
 // Check if password is the same as confirm password
 $passwordBinary = hash('sha512', $password);;
 $passwordCheckbinary = hash('sha512', $confirmPass);
-echo $password;
-echo "    ";
-echo  hash('sha512', $password);
+
 if($passwordCheckbinary == $passwordBinary) {
   $userID = query("SELECT USER_ID FROM USER WHERE Email_Address = '$email';","USER_ID",$conn);
   $mysqlQuery = "
@@ -26,9 +23,14 @@ if($passwordCheckbinary == $passwordBinary) {
       set password = '$passwordBinary'
       where User_ID = '$userID';";
         mysqli_query($conn,$mysqlQuery);
-        echo "done3";
-        echo "        " + $passwordBinary + "      "+ $password;
+        ?>
+    <script type="text/javascript">
+        alert("<?php echo "Password has been changed"; ?>");
+                window.location = "../index.php";
+        </script>
+<?php
+
 }else{
     popUp("Passwords do not match");
 }
-
+?>

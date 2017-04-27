@@ -48,9 +48,12 @@ if($_SESSION['loggedIn'] == true) {
                 <br>
                 <input type="checkbox" name="now" value="Yes"/>
                 Hire now<br><br>
+                If you do not wish to hire it now, please select when you wish to hire it.
+                <br><br>
                 <tr>
                     Hour
                     <select name="Hour">
+                        <option value="00">00</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -74,18 +77,17 @@ if($_SESSION['loggedIn'] == true) {
                         <option value="21">21</option>
                         <option value="22">22</option>
                         <option value="23">23</option>
-                        <option value="24">24</option>
                     </select>
                 </tr>
                 <tr>
                     Minute
                     <select name="Minute">
+                        <option value="00">00</option>
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="30">30</option>
                         <option value="40">40</option>
                         <option value="50">50</option>
-                        <option value="60">60</option>
 
                     </select>
                     <br></br>
@@ -101,12 +103,12 @@ if($_SESSION['loggedIn'] == true) {
                     What type of bike would you like to hire?
                     <select name="bikeType">
                         <option value="Select">Select..</option>
-                        <option value="Mountain">Mountain</option>
-                        <option value="Road">Road</option>
-                        <option value="BMX">BMX</option>
-                        <option value="Dirt">Dirt</option>
-                        <option value="Sport">Sport</option>
-                        <option value="Generic">Generic</option>
+                        <option value="1">Mountain</option>
+                        <option value="2">Road</option>
+                        <option value="3">BMX</option>
+                        <option value="4">Dirt</option>
+                        <option value="5">Sport</option>
+                        <option value="6">Generic</option>
                     </select>
                 </tr>
                 <tr>
@@ -121,6 +123,7 @@ if($_SESSION['loggedIn'] == true) {
     </html>
     <?php
 } else {
+    header("Location: ../content/notLoggedIn.html");
 
 }
 ?>

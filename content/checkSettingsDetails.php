@@ -27,55 +27,25 @@ else{
 $conn = connect();
 $email = $_SESSION['email'];
 $userID = query("SELECT USER_ID FROM USER WHERE Email_Address = '$email';","USER_ID",$conn);
-echo "                                                               ".$userID."                                    ";
 if($universityRole == "Student") {
-
-    $mysql_update = "
-UPDATE `unicycle`.`user` 
-	SET
-	`Forename` = '$forename', 
-	`Surname` = '$surname', 
-	`Phone` = '$phoneNumber', 
-	`Is_Student` = True, 
-	`Is_Lecturer` = FALSE, 
-	`Is_Other_Staff` = FALSE,
+    $mysqlQuery = "
+  UPDATE USER 
+	SET Forename = '$forename', Surname = '$surname', Phone = '$phoneNumber', Is_Student = TRUE,
+	Is_Lecturer = FALSE
 	WHERE
-	`User_ID` = '$userID' ;";
+	User_ID = '$userID';";
+
     mysqli_query($conn,$mysql_update);
     $_SESSION['Username'] = $forename." ".$surname;
     reDirect();
-
 }
 else if($universityRole == "Lecturer"){
-
     $mysql_update = "
-UPDATE `unicycle`.`user` 
-	SET
-	`Forename` = '$forename', 
-	`Surname` = '$surname', 
-	`Phone` = '$phoneNumber', 
-	`Is_Student` = FALSE, 
-	`Is_Lecturer` = TRUE, 
-	`Is_Other_Staff` = FALSE, 
-	WHERE
-	`User_ID` = '$userID' ;";
-    mysqli_query($conn,$mysql_update);
-    $_SESSION['Username'] = $forename." ".$surname;
-    reDirect();
-
-}
-else if($universityRole == "Other"){
-    $mysql_update = "
-UPDATE `unicycle`.`user` 
-	SET
-	`Forename` = '$forename', 
-	`Surname` = '$surname', 
-	`Phone` = '$phoneNumber', 
-	`Is_Student` = FALSE, 
-	`Is_Lecturer` = FALSE, 
-	`Is_Other_Staff` = TRUE, 
-	WHERE
-	`User_ID` = '$userID' ;";
+      UPDATE USER 
+	    SET Forename = '$forename', Surname = '$surname', Phone = '$phoneNumber', Is_Student = False,
+	    Is_Lecturer = TRUE 
+	    WHERE
+	    User_ID = '$userID';";
     mysqli_query($conn,$mysql_update);
     $_SESSION['Username'] = $forename." ".$surname;
     reDirect();
@@ -88,6 +58,7 @@ else
 function reDirect(){
     ?>
     <script type="text/javascript">
+        alert("<?php echo "Details have been changed"; ?>");
         window.location = "../index.php";
     </script>
     <?php

@@ -30,9 +30,9 @@ if($topic == ""){
             $result = mysqli_query($conn, $mysql_qry);
                 ?>
                 <script type="text/javascript">
-                    alert("<?php echo "Report has been submitted"; ?>");
-                    window.location = "../index.php";
-                </script>
+                alert("<?php echo "Report has been submitted"; ?>");
+                window.location = "../index.php";
+            </script>
                 <?php
             }
         }

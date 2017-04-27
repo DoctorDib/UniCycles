@@ -10,73 +10,6 @@
 
             $userID = $_SESSION['email'];
             $conn = connect();
-            $queryFrom = "SELECT Bike_From FROM request WHERE Date_Of_Departure = DATE_FORMAT(NOW(),'%Y-%m-%d') AND Time_of_Departure <= DATE_FORMAT(NOW(),'%i-%H') AND DATE_FORMAT(Return_Time,'%i-%H') <= DATE_FORMAT(NOW(),'%i-%H') AND Email_Address = '$userID';";
-            $queryTo = "SELECT Bike_To FROM request WHERE Date_Of_Departure = DATE_FORMAT(NOW(),'%Y-%m-%d') AND Time_of_Departure <= DATE_FORMAT(NOW(),'%i-%H') AND DATE_FORMAT(Return_Time,'%i-%H') <= DATE_FORMAT(NOW(),'%i-%H') AND USER_ID = '$userID';";
-            $queryTimeOfDep = "SELECT Time_of_Departure FROM request WHERE Date_Of_Departure = DATE_FORMAT(NOW(),'%Y-%m-%d') AND Time_of_Departure <= DATE_FORMAT(NOW(),'%i-%H') AND DATE_FORMAT(Return_Time,'%i-%H') <= DATE_FORMAT(NOW(),'%i-%H') AND USER_ID = '$userID';";
-            $queryTimeOfArrival = "SELECT Return_Time FROM request WHERE Date_Of_Departure = DATE_FORMAT(NOW(),'%Y-%m-%d') AND Time_of_Departure <= DATE_FORMAT(NOW(),'%i-%H') AND DATE_FORMAT(Return_Time,'%i-%H') <= DATE_FORMAT(NOW(),'%i-%H') AND USER_ID = '$userID';";
-            ?>
-            <article>
-
-                <table style="width:100%">
-                    <tr>
-                        <th colspan="2" class="tableTitle"> Current Hire</th>
-                    </tr>
-                    <tr>
-                        <td>From:</td>
-                        <td>
-                            <?php
-                            echo $_SESSION['From'];
-                            echo 'steve'
-                            ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>To:</td>
-                        <td>
-                            <?php
-                            $to = query($queryTo, Bike_To, $conn);
-                            echo location($to);
-                            ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Time of Departure:</td>
-                        <td>
-                            <?php
-                            echo query($queryTimeOfDep, Time_of_Departure, $conn);
-                            ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Return Time</td>
-                        <td>
-                            <?php
-                            echo query($queryTimeOfArrival, Return_Time, $conn);
-                            ?>
-                        </td>
-                    </tr>
-                    <tr>
-                       <!-- <td>
-                            <input type="button" value="extendTime" onclick="<?php extendTime(); ?>"/>
-                        </td>-->
-                    </tr>
-                </table>
-            </article>
-            <?php
-            function extendTime()
-            {
-                include "../scripts/connect.php";
-                $conn = connect();
-
-                $email = $_SESSION['email'];
-                $userID = query("SELECT USER_ID FROM USER WHERE EMAIL_ADDRESS = '$email';", USER_ID, $conn);
-                $queryTimeOfArrival = "SELECT Return_Time FROM request WHERE Date_Of_Departure = DATE_FORMAT(NOW(),'%Y-%m-%d') AND Time_of_Departure <= DATE_FORMAT(NOW(),'%i-%H') AND DATE_FORMAT(Return_Time,'%i-%H') <= DATE_FORMAT(NOW(),'%i-%H') AND USER_ID = '$userID';";
-                $mysql_qry = "UPDATE `unicycle`.`request`
-	                  SET `Return_time` = 'now() + 2hours',
-	                  WHERE USER_ID = '$userID' AND Date_Of_Departure = DATE_FORMAT(NOW(),'%Y-%m-%d');";
-            }
-
-            $result = mysqli_query($conn, $mysql_qry);
 
             function location($location)
             {
@@ -113,15 +46,81 @@
                         break;
                 }
             }
-        }
-        else if($_SESSION['bikeHired'] == false || $_SESSION['bikeHired'] == null){
-		    ?>
-                <-- Please enter lines for no current hire in here please james.
+            ?>
+            <article>
+
+                <table style="width:100%">
+                    <tr>
+                        <th colspan="2" class="tableTitle"> Current Hire</th>
+                    </tr>
+                    <tr>
+                        <td>From:</td>
+                        <td>
+                            <?php
+                            echo location($_SESSION['from']);
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>To:</td>
+                        <td>
+                            <?php
+                            echo location($_SESSION['to']);
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Time of Departure:</td>
+                        <td>
+                            <?php
+                            echo $_SESSION['startTime'];
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Return Time</td>
+                        <td>
+                            <?php
+                            echo $_SESSION['returnTime'];
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>
+                            <?php
+                            echo $_SESSION['date'];
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="extendTime" onclick="<?php echo $_SESSION['returnTime'] = $_SESSION['extended'];?> "/>
+                        </td>
+</tr>
+                </table>
+            </article>
             <?php
+
         }
-        /*else
-        {
-                echo "Please log in to use this functionality";
-        }*/
+        else if(($_SESSION['bikeHired'] == false || $_SESSION['bikeHired'] == null) && $_SESSION['loggedIn'] == true) {
+    header("Location: ../content/noCurrentHire.html");
+}
+else{
+
+    header("Location: ../content/notLoggedIn.html");
+}
+        function extendTime(){
+		    session_start();
+           $hour = $_SESSION['hour'];
+           $min = $_SESSION['min'];
+            if(($hour+6) >= 24){
+                return $returnTime = (($hour + 6)-24).":".$min;
+            }
+            else{
+                return $returnTime = ($hour + 6).":".$min;
+            }
+
+        }
 ?>
 </html>

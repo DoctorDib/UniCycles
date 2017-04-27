@@ -18,7 +18,9 @@
 						$forename = $_POST['forename'];
 						?>
                         <form action="../content/checkSettingsDetails.php" method="post" enctype="multipart/form-data">
-						<label> Forename: </label>
+                            Please ensure you fill in all details:
+                            <br><br>
+                            <label> Forename: </label>
 						<input type="text" value="New Forename" name="newForename"/>
 
 						<br></br>
@@ -34,7 +36,6 @@
                             <option value="">Select...</option>
                             <option value="Student">Student</option>
                             <option value="Lecturer">Lecturer</option>
-                            <option value="Other">Lecturer</option>
                         </select>
 
                         <br></br>
@@ -50,7 +51,8 @@
                         <form action="../content/checkSettingsPassword.php" method="post" enctype="multipart/form-data">
 
                             <br></br>
-
+                            Change Password:
+                            <br>
                             <label> New Password: </label>
                             <input type="password" value="" name="password"/>
 
@@ -79,7 +81,7 @@
         <?php
     }
     else{
-        echo "Please login to use this functionality";
+        header("Location: ../content/notLoggedIn.html");
     }
 ?>
 </html>
