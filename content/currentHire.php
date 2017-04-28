@@ -95,32 +95,23 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="button" value="extendTime" onclick="<?php echo $_SESSION['returnTime'] = $_SESSION['extended'];?> "/>
+                            <input type="button" value="extendTime" onclick="<?php echo $_SESSION['returnTime'] = $_SESSION['extended'];?>
+                                    <script type='text/javascript'>
+                            alert('<?php echo 'Time has been extended. This may only occur once per trip.'; ?>');
+                            window.location = '../index.php';
+                            </script>"/>
                         </td>
 </tr>
                 </table>
             </article>
             <?php
-
         }
         else if(($_SESSION['bikeHired'] == false || $_SESSION['bikeHired'] == null) && $_SESSION['loggedIn'] == true) {
     header("Location: ../content/noCurrentHire.html");
 }
 else{
-
     header("Location: ../content/notLoggedIn.html");
 }
-        function extendTime(){
-		    session_start();
-           $hour = $_SESSION['hour'];
-           $min = $_SESSION['min'];
-            if(($hour+6) >= 24){
-                return $returnTime = (($hour + 6)-24).":".$min;
-            }
-            else{
-                return $returnTime = ($hour + 6).":".$min;
-            }
-
-        }
 ?>
+
 </html>
